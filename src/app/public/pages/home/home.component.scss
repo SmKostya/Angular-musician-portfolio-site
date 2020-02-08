@@ -1,8 +1,29 @@
 .main{
     height: 400%;
-    width: 68%;
-    margin: 0 auto;
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.47) 0%, #000000 50%, rgba(0, 0, 0, 0.64) 100%);
-    backdrop-filter: blur(2px);
-    
+    width: 70%;
+    padding: 2% 15%;
+    background: #23262f;
+
+    .news{
+        display: flex;
+        flex-direction: row;
+        h2{
+            color:white;
+            width: .7em; 
+            width: 1ch; 
+            text-align: center; 
+            font: Consolas, Monaco, monospace; 
+            word-wrap: break-word;
+            padding-right: 40px;
+            font-family: Stencil;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 40px;
+            line-height: 45px;
+        }
+        p{
+            font-size: 20px; 
+            color: white;
+        }
+    }
 }

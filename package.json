@@ -6,7 +6,7 @@
     "pug-it": "pug src",
     "pug-it:w": "pug src -P -w",
     "start": "run-p pug-it:w server",
-    "server": "ng serve --port 4210",
+    "server": "ng serve --host=25.93.49.95",
     "prebuild": "yarn run pug-it",
     "build": "ng build"
   },

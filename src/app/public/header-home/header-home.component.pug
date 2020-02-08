@@ -1,3 +1,4 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 header
     nav 
         .menu#menu
@@ -10,12 +11,30 @@ header
                     a(href="/portfolio") Portfolio
                 li 
                     a(href="/aboutUs") About Us
-    img(class= "{{ imageClass }}" src = "../../assets/img/bg6.jpg")
+    img(class= "{{ imageClass }}" src = "../../assets/img/bg5.jpg")
     .popMessage
         .firstMessage( class = "{{ popClass }}")
             div.bg
-            p Record Studio
+            p Speciality
                 
         .secondMessage(class = "{{ popClass2 }}")
             div.bg
-            p AMET-RC
+            p Compami name
+    .startButton
+        div( class = "{{ buttonClass }}") View our works
+    //- .social
+    <div class="social">
+        .share(class = "{{ shareClass }}")
+            //- img(src="../../assets/img/logo.jpg" width="50px" height="50px")
+            <a href="#"><i class="fa fa-share fa-2x" aria-hidden="true"></i></a>
+        <ul (mouseover) = "hideShare()" (mouseleave) = "showShare()">
+            <li class="soundcloud"><a href="https://soundcloud.com/amet_rc" target="_blank"><i class="fa fa-soundcloud fa-2x" aria-hidden="true"></i></a></li>
+            <li class="instagram"><a href="https://www.instagram.com/amet_rc" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a></li>
+            <li class="facebook"><a href="https://www.facebook.com/amet.ibraimov.1" target="_blank"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a></li>
+            <li class="vk"><a href="https://vk.com/amet_ib" target="_blank"><i class="fa fa-vk fa-2x" aria-hidden="true"></i></a></li>
+            <li class="youtube"><a href="https://www.youtube.com/channel/UC3rUna-dZuPyakff7cNRCSQ?view_as=subscriber" target="_blank"><i class="fa fa-youtube fa-2x" aria-hidden="true"></i></a></li>
+            //- <li class="whatsapp"><a href="#"><i class="fa fa-whatsapp fa-2x" aria-hidden="true"></i></a></li>
+        </ul>
+    </div>
+        
+    

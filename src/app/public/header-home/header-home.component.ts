@@ -11,9 +11,16 @@ export class HeaderHomeComponent implements AfterViewInit {
   public imageClass = " ";
   public popClass = " ";
   public popClass2 = " ";
-
+  public buttonClass = " ";
+  public shareClass = " ";
+  hideShare(){
+    this.shareClass = "hide";
+  }
+  showShare(){
+    this.shareClass = "show";
+  }
   ngAfterViewInit(){
-    // console.log(this.header);
+
     setTimeout(() => {
       this.imageClass = "appearanceImage"; 
     }, 0);
@@ -24,6 +31,9 @@ export class HeaderHomeComponent implements AfterViewInit {
       this.popClass = "StartPopMessageFirst"; 
       setTimeout(() => {
         this.popClass2 = "StartPopMessageSecond"; 
+        setTimeout(() => {
+          this.buttonClass = "active"; 
+        }, 1000);
       }, 1000);
     }, 1000);
   }

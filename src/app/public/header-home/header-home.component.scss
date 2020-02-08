@@ -1,189 +1,424 @@
-@import url('https://fonts.googleapis.com/css?family=Stardos+Stencil&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Stardos+Stencil&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC&display=swap');
+$mainColor: #ffffff;
 
-$mainColor: #fff;
-
-header{
-    height: 80vh;
+header {
+  height: 80vh;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  nav {
+    z-index: 2;
+    position: absolute;
     width: 100%;
-    overflow: hidden;
-    position: relative;
+    top: 5%;
     display: flex;
-    nav{
-        z-index: 2;
-        position: absolute;
+    margin-bottom: 30px;
+    .menu {
+      margin: auto;
+      width: 40%;
+      ul {
         width: 100%;
-        top: 5%;
+        justify-content: space-around;
         display: flex;
-        margin-bottom: 30px;
-        .menu{
-            margin: auto;
-            width: 40%;
-            ul{
-                width: 100%;
-                justify-content: space-around;
-                display: flex;
 
-                li{
-                    text-align: center;
-                    margin: auto;
-                    color: #fff;
-                    display: inline-block;
-                    a{
-                        font-family: Stardos Stencil;
-                        font-style: normal;
-                        font-weight: normal;
-                        font-size: 30px;
-                        letter-spacing: 2px;
-                        // color: #d5d816;
-                        // color: #ebef0c;
-                        color: $mainColor;
-                        text-decoration: none;
-
-                    }
-                }
-            }
+        li {
+          text-align: center;
+          margin: auto;
+          color: #fff;
+          display: inline-block;
+          a {
+            font-family: Stardos Stencil;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 30px;
+            letter-spacing: 2px;
+            // color: #d5d816;
+            // color: #ebef0c;
+            color: $mainColor;
+            text-decoration: none;
+          }
         }
+      }
     }
+  }
 
-    img{
-        opacity: 0;
-        transition: 1s;
-        transform-origin: bottom right;
-        transform: scale(1.2);
-        overflow: hidden;
+  img {
+    opacity: 0;
+    transition: 1s;
+    transform-origin: bottom right;
+    transform: scale(1.2);
+    overflow: hidden;
+    width: 100%;
+  }
+  img.appearanceImage {
+    opacity: 1;
+    transition: 1s;
+  }
+  img.scaledImage {
+    opacity: 1;
+    transition: 24s;
+    transform-origin: bottom right;
+    transform: scale(1);
+  }
+  .popMessage {
+    z-index: 3;
+    position: absolute;
+    top: 30%;
+    margin: auto;
+    left: calc(50% - 220px);
+    font-family:  'Amatic SC', cursive;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 60px;
+    line-height: 55px;
+    // color: #d5d816;
+    // color: #ebef0c;
+    color: $mainColor;
+    .firstMessage,
+    .secondMessage {
+      display: flex;
+      opacity: 0;
+      z-index: 3;
+      width: 440px;
+      height: 50px;
+      left: calc(50% - 220px);
+      top: 30%;
+      position: relative;
+      text-align: center;
+      margin: 30px 0;
+      overflow: hidden;
+      padding: 16px 0;
+      // transform: translateY(320%);
+      background-repeat: no-repeat;
+      .bg {
+        z-index: 4;
         width: 100%;
-
-    }
-    img.appearanceImage{
-        opacity: 1;
-        transition: 1s;
-    }
-    img.scaledImage{
-        opacity: 1;
-        transition: 24s;
-        transform-origin: bottom right;
-        transform: scale(1);
-    }
-    .popMessage{
-        z-index: 3;
+        height: 0%;
         position: absolute;
-        top: 30%;
-        margin: auto;
-        left: calc(50% - 215px);
-        font-family: Stardos Stencil;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 60px;
-        line-height: 55px;
-        // color: #d5d816;
-        // color: #ebef0c;
-        color: $mainColor;
-        .firstMessage, .secondMessage{
-            display: flex;
-            opacity: 0;
-            z-index: 3;
-            width: 440px;
-            height: 50px;
-            left: calc(50% - 220px);
-            top: 30%;
-            position: relative;
-            text-align: center;
-            margin: 30px 0;
-            overflow: hidden;
-            padding: 16px 16px;
-            // transform: translateY(320%);
-            background-repeat: no-repeat;
-            .bg{
-                z-index: 4;
-                width: 0%;
-                height: 100%;
-                position: absolute;
-                text-align: center;
-                overflow: hidden;
-                background: url('../../../assets/img/white.jpg');
-                background-repeat: no-repeat;
-            }
-            p{
-                width: 440px;
-                height: 50px;
-                text-align: center;
-                z-index: 1;
-                position: absolute;
-            }
-        }
-        .secondMessage{
-            p{
-                width: 440px;
-                height: 50px;
-                margin: auto;
-            }
-        }
-        @keyframes popBlock {
-            0% {
-                opacity: 1;
-                // transform: translateY(320%);
-            }
-            100% {
-                opacity: 1;
-                // transform: translateY(320%);
-            }
-            // 51% {
-            //     opacity: 1;
-            //     transform: translateY(0%);
-            // }
-            // 100% {
-            //     opacity: 1;
-            //     transform: translateY(0%);
-            // }
-        }
-        @keyframes popBG {
-            0% {
-                opacity: 1;
-                width: 0%;
-            }
-            50% {
-                width: 100%;
-                opacity: 1;
-                background-position: 0% 0px;
-            }
-
-            100% {
-                width: 100%;
-                background-position: -100% 0px;
-            }
-        }
-        @keyframes popText {
-            0% {
-                opacity: 0;
-            }
-            50% {
-                opacity: 0;
-            }
-            51% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 1;
-            }
-        }
-        .StartPopMessageFirst{
-            animation: popBlock  2s 1 ease-in-out forwards ;
-            .bg{
-                animation: popBG  2s 1 forwards ;
-            }
-            p{
-                animation: popText  2s 1 ease-in-out forwards ;
-            }
-        }
-        .StartPopMessageSecond{
-            animation: popBlock 2s 1 ease-in-out forwards ;
-            .bg{
-                animation: popBG  2s 1 forwards ;
-            }
-            p{
-                animation: popText 2s 1 ease-in-out forwards ;
-            }
-        }
-
+        text-align: center;
+        overflow: hidden;
+        background: url("../../../assets/img/white.jpg");
+        background-position: 0% 0%, 0% 0%;
+        background-repeat: no-repeat;
+      }
+      p {
+        width: 440px;
+        height: 50px;
+        text-align: center;
+        z-index: 1;
+        position: absolute;
+      }
     }
+    .secondMessage {
+      p {
+        width: 440px;
+        height: 50px;
+        margin: auto;
+      }
+    }
+    @keyframes popBlock {
+      0% {
+        opacity: 1;
+        // transform: translateY(320%);
+      }
+      100% {
+        opacity: 1;
+        // transform: translateY(320%);
+      }
+      // 51% {
+      //     opacity: 1;
+      //     transform: translateY(0%);
+      // }
+      // 100% {
+      //     opacity: 1;
+      //     transform: translateY(0%);
+      // }
+    }
+    @keyframes popBG {
+      0% {
+        opacity: 1;
+        height: 0%;
+      }
+      50% {
+        height: 100%;
+        opacity: 1;
+        background-position: 0% 0%;
+      }
+
+      100% {
+        height: 100%;
+        background-position: 100% -80%;
+      }
+    }
+    @keyframes popText {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 0;
+      }
+      51% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    .StartPopMessageFirst {
+      animation: popBlock 2s 1 ease-in-out forwards;
+      .bg {
+        animation: popBG 2s 1 forwards;
+      }
+      p {
+        animation: popText 2s 1 ease-in-out forwards;
+      }
+    }
+    .StartPopMessageSecond {
+      animation: popBlock 2s 1 ease-in-out forwards;
+      .bg {
+        animation: popBG 2s 1 forwards;
+      }
+      p {
+        animation: popText 2s 1 ease-in-out forwards;
+      }
+    }
+  }
+  $activeButton: #ffffff;
+  .startButton {
+      position: absolute;
+      bottom: 10%;
+      left: calc(50% - 160.5px);
+    div {
+      opacity: 0;
+      background: none;
+      border: 0;
+      box-sizing: border-box;
+      padding: 1em 2em;
+      box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0);
+      color: white;
+      font-size: 30px;
+      font-weight: 700;
+      position: relative;
+      vertical-align: middle;
+
+      &::before,
+      &::after {
+        box-sizing: inherit;
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+
+      transition: color 0.25s;
+
+      &::before,
+      &::after {
+        border: 2px solid transparent;
+        width: 0;
+        height: 0;
+      }
+
+      &::before {
+        top: 0;
+        left: 0;
+      }
+
+      &::after {
+        bottom: 0;
+        right: 0;
+      }
+      &.active {
+        opacity: 1 !important;
+        transition: 1s;
+        background-color: rgba(0, 0, 0, 0.089);
+        backdrop-filter: blur(3px);
+        color: $activeButton;
+
+        &::before,
+        &::after {
+          width: 100%;
+          height: 100%;
+        }
+
+        &::before {
+          border-top-color: $activeButton;
+          border-right-color: $activeButton;
+          transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+        }
+
+        &::after {
+          border-bottom-color: $activeButton;
+          border-left-color: $activeButton;
+          transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;
+        }
+      }
+    }
+  }
 }
+
+.social{
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  transition: 1s;
+  padding: 16px;
+  border-radius: 4px;
+  text-align: center;
+  // background-color: rgba(255, 255, 255, 0.329);
+  // backdrop-filter: blur(8px);
+  position: fixed;
+  width: 80px;
+  transform: translateX(115px);
+  right: 0;
+  top: calc(50% - 206px);
+  padding-left: 100px;
+  &:hover{
+    transform: translateX(0px);
+    padding-left: 0px;
+  }
+  .share{
+    img{
+      opacity: 1;
+      border-radius: 50%;
+    }
+    a{
+      transform: translateX(-10px);
+      filter: grayscale(100%); 
+    }
+    transform: translateX(-50px);
+    position: fixed;
+    display: flex;
+    margin: auto;
+    top: calc(200px);
+    width: 50px;
+    height: 100vh;
+    transition: 0.5s;
+    &.hide, &:hover{
+      opacity: 0;
+    }
+  }
+  ul {
+    list-style: none;
+    li {
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      margin: 5px 0 5px 12px;
+      text-align: center;
+      cursor: pointer;
+      border-radius: 50%;
+      border: 3px solid #D8E2DC;
+      float: left;
+      transition: all 0.5s ease;
+      .fa {
+        color: #D8E2DC;
+        margin-top: 10px;
+        transition: all 0.5s ease;
+      }
+      &:hover{
+
+
+        $facebook: #3b5998;
+        &.facebook{
+          border: 5px solid $facebook;
+          box-shadow: 0 0 15px $facebook;
+          transition: all 0.5s ease;
+        }
+        .fa-facebook{
+          color: $facebook;
+          text-shadow: 0 0 15px $facebook;
+          transition: all 0.5s ease;
+        }
+        
+
+        $instagram: #c316dc;
+        &.instagram {
+          border: 5px solid $instagram;
+          box-shadow: 0 0 15px $instagram;
+          transition: all 0.5s ease;
+        }
+        .fa-instagram {
+          color: $instagram;
+          text-shadow: 0 0 15px $instagram;
+          transition: all 0.5s ease;
+        }
+
+        $google: #c5221f;
+        &.google {
+          border: 5px solid $google;
+          box-shadow: 0 0 15px $google;
+          transition: all 0.5s ease;
+        }
+        .fa-google {
+          color: $google;
+          text-shadow: 0 0 15px $google;
+          transition: all 0.5s ease;
+        }
+
+        $youtube: #ff0000;
+        &.youtube {
+          border: 5px solid $youtube;
+          box-shadow: 0 0 15px $youtube;
+          transition: all 0.5s ease;
+        }
+        .fa-youtube {
+          color: $youtube;
+          text-shadow: 0 0 15px $youtube;
+          transition: all 0.5s ease;
+        }
+
+        $soundcloud: #ff3c00;
+        &.soundcloud {
+          border: 5px solid $soundcloud;
+          box-shadow: 0 0 15px $soundcloud;
+          transition: all 0.5s ease;
+        }
+        .fa-soundcloud {
+          color: $soundcloud;
+          text-shadow: 0 0 15px $soundcloud;
+          transition: all 0.5s ease;
+        }
+
+        $vk: #00aced;
+        &.vk {
+          border: 5px solid $vk;
+          box-shadow: 0 0 15px $vk;
+          transition: all 0.5s ease;
+        }
+        .fa-vk {
+          color: $vk;
+          text-shadow: 0 0 15px $vk;
+          transition: all 0.5s ease;
+        }
+      }
+    }
+    
+  }
+}
+
+/* media queries */
+
+@media screen and (max-width: 640px){
+  .social {
+    width: 350px;
+
+    ul li{
+        margin-top: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 340px){
+  .social {
+      width: 150px;
+    ul li{
+      margin:15px;
+    }
+  }
+}
+
+
