@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css?family=Stardos+Stencil&display=swap');
+
+$mainColor: #fff;
+
+header{
+    height: 80vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    nav{
+        z-index: 2;
+        position: absolute;
+        width: 100%;
+        top: 5%;
+        display: flex;
+        margin-bottom: 30px;
+        .menu{
+            margin: auto;
+            width: 40%;
+            ul{
+                width: 100%;
+                justify-content: space-around;
+                display: flex;
+
+                li{
+                    text-align: center;
+                    margin: auto;
+                    color: #fff;
+                    display: inline-block;
+                    a{
+                        font-family: Stardos Stencil;
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 30px;
+                        letter-spacing: 2px;
+                        // color: #d5d816;
+                        // color: #ebef0c;
+                        color: $mainColor;
+                        text-decoration: none;
+
+                    }
+                }
+            }
+        }
+    }
+
+    img{
+        opacity: 0;
+        transition: 1s;
+        transform-origin: bottom right;
+        transform: scale(1.2);
+        overflow: hidden;
+        width: 100%;
+
+    }
+    img.appearanceImage{
+        opacity: 1;
+        transition: 1s;
+    }
+    img.scaledImage{
+        opacity: 1;
+        transition: 24s;
+        transform-origin: bottom right;
+        transform: scale(1);
+    }
+    .popMessage{
+        z-index: 3;
+        position: absolute;
+        top: 30%;
+        margin: auto;
+        left: calc(50% - 215px);
+        font-family: Stardos Stencil;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 60px;
+        line-height: 55px;
+        // color: #d5d816;
+        // color: #ebef0c;
+        color: $mainColor;
+        .firstMessage, .secondMessage{
+            display: flex;
+            opacity: 0;
+            z-index: 3;
+            width: 440px;
+            height: 50px;
+            left: calc(50% - 220px);
+            top: 30%;
+            position: relative;
+            text-align: center;
+            margin: 30px 0;
+            overflow: hidden;
+            padding: 16px 16px;
+            // transform: translateY(320%);
+            background-repeat: no-repeat;
+            .bg{
+                z-index: 4;
+                width: 0%;
+                height: 100%;
+                position: absolute;
+                text-align: center;
+                overflow: hidden;
+                background: url('../../../assets/img/white.jpg');
+                background-repeat: no-repeat;
+            }
+            p{
+                width: 440px;
+                height: 50px;
+                text-align: center;
+                z-index: 1;
+                position: absolute;
+            }
+        }
+        .secondMessage{
+            p{
+                width: 440px;
+                height: 50px;
+                margin: auto;
+            }
+        }
+        @keyframes popBlock {
+            0% {
+                opacity: 1;
+                // transform: translateY(320%);
+            }
+            100% {
+                opacity: 1;
+                // transform: translateY(320%);
+            }
+            // 51% {
+            //     opacity: 1;
+            //     transform: translateY(0%);
+            // }
+            // 100% {
+            //     opacity: 1;
+            //     transform: translateY(0%);
+            // }
+        }
+        @keyframes popBG {
+            0% {
+                opacity: 1;
+                width: 0%;
+            }
+            50% {
+                width: 100%;
+                opacity: 1;
+                background-position: 0% 0px;
+            }
+
+            100% {
+                width: 100%;
+                background-position: -100% 0px;
+            }
+        }
+        @keyframes popText {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 0;
+            }
+            51% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        .StartPopMessageFirst{
+            animation: popBlock  2s 1 ease-in-out forwards ;
+            .bg{
+                animation: popBG  2s 1 forwards ;
+            }
+            p{
+                animation: popText  2s 1 ease-in-out forwards ;
+            }
+        }
+        .StartPopMessageSecond{
+            animation: popBlock 2s 1 ease-in-out forwards ;
+            .bg{
+                animation: popBG  2s 1 forwards ;
+            }
+            p{
+                animation: popText 2s 1 ease-in-out forwards ;
+            }
+        }
+
+    }
+}
