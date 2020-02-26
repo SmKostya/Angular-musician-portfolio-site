@@ -1,2 +1,14 @@
-app-header
-<p>shop works!</p>
+app-header-shop
+main
+    .sortBy
+        span Sort By
+        .selectedFilter((click)="toogleList__filter()") 
+            span {{ selected__filter }}
+            span.arrow ˅
+        ul(class= "{{ filter__category }}")
+            li.checked((click)="select__filter($event)") Latest
+            li((click)="select__filter($event)") Price ⯅ 
+            li((click)="select__filter($event)") Price ⯆ 
+            li((click)="select__filter($event)") Oldest
+
+div((click)="toogleList__filter()" class = "{{ filterOverlayBackdrop }}")

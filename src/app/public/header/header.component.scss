@@ -1,44 +1,74 @@
 @import url('https://fonts.googleapis.com/css?family=Stardos+Stencil&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
 
 $mainColor: rgb(0, 0, 0);
-
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 header{
-    height: 150px;
+    height: 50px;
     width: 100%;
-    overflow: hidden;
-    position: relative;
     display: flex;
+    background: #111110;
     nav{
-        z-index: 2;
-        position: absolute;
         width: 100%;
-        top: 5%;
         display: flex;
-        margin-bottom: 30px;
-        .menu{
+        height: 50px;
+
+        .menu{  
+            height: 50px;
             margin: auto;
-            width: 40%;
+            width: 80%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            .search{
+                border-radius: 18px;
+                background-color: #2a2a2a;
+                min-width: 220px;
+                width: 20%;
+                display: flex;
+                margin: auto;
+                margin-left: 0;
+                flex-direction: row;
+                // height: 28px;
+                .icon__search{
+                    width: 30px;
+                    height: 28px;
+                    filter: invert(1);
+                }
+                input{
+                    background: none;
+                    border: none;
+                }
+            }
             ul{
-                width: 100%;
-                justify-content: space-around;
+                margin-right: 0;
+                height: 50px;
+                width: 20%;
+                min-width: 300px;
+                // justify-content: space-around;
                 display: flex;
 
                 li{
                     text-align: center;
                     margin: auto;
-                    color: #fff;
                     display: inline-block;
                     
                     a{
-                        font-family: Stardos Stencil;
+                        font-family: "Poppins";
                         font-style: normal;
                         font-weight: normal;
-                        font-size: 30px;
-                        letter-spacing: 2px;
-                        // color: #d5d816;
-                        // color: #ebef0c;
-                        color: $mainColor;
+                        font-size: 14px;
+                        outline: 0;
+                        letter-spacing: .2px;
+                        color: #fff;
                         text-decoration: none;
+                        &.active{
+                            color: grey;
+                        }
                     }
                 }
             }

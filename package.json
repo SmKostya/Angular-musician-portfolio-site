@@ -6,9 +6,10 @@
     "pug-it": "pug src",
     "pug-it:w": "pug src -P -w",
     "start": "run-p pug-it:w server",
-    "server": "ng serve --host=25.93.49.95",
+    "server": "ng serve --host=0.0.0.0",
     "prebuild": "yarn run pug-it",
-    "build": "ng build"
+    "build": "ng build",
+    "json-server": "json-server --watch db.json"
   },
   "private": true,
   "dependencies": {
@@ -17,10 +18,17 @@
     "@angular/compiler": "~8.2.14",
     "@angular/core": "~8.2.14",
     "@angular/forms": "~8.2.14",
+    "@angular/http": "^7.2.16",
     "@angular/platform-browser": "~8.2.14",
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
+    "bootstrap": "^4.4.1",
+    "jplayer": "^2.9.2",
+    "jquery": "^3.4.1",
+    "json-server": "^0.16.1",
+    "popper.js": "^1.16.1",
     "rxjs": "~6.4.0",
+    "soundcloud-api-client": "0.0.9",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },

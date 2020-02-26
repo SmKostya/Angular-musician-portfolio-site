@@ -8,8 +8,17 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   constructor() { }
-
+  public showGoTopClass = "hideWidget";
   ngOnInit() {
   }
-
+  onScroll(){
+    if (window.scrollY<1000){
+      this.showGoTopClass = "hideWidget";
+    }else if(window.scrollY != undefined){
+      this.showGoTopClass = "showWidget";
+    }
+  }
+  goTop(){
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }

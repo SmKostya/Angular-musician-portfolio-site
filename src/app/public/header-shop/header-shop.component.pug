@@ -1,11 +1,18 @@
 header
     nav 
-        .menu#menu
+        .menuShop#menuShop
             .search
                 .icon__search
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24" focusable="false"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"></circle><path d="M21 21l-5.2-5.2"></path></svg>
-                input(type="search" name="")
+                input(type="search" name="" placeholder="What are you looking for?")
                 .category 
+                    span((click)="toogleList__category()") {{ selected__category }}
+                ul(class= "{{ list__category }}")
+                    li.checked((click)="select__category($event)") All
+                    li((click)="select__category($event)") Category 1
+                    li((click)="select__category($event)") Category 2
+                    li((click)="select__category($event)") Category 3
+                    li((click)="select__category($event)") Category 4
             ul.right  
                 li 
                     a(href="/home") Home
@@ -15,3 +22,5 @@ header
                     a(href="/portfolio") Portfolio
                 li 
                     a(href="/aboutUs") About Us
+
+div((click)="toogleList__category()" class = "{{ overlayBackdrop }}")

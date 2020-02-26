@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, ViewChild, AfterViewInit, Input, Directive} from '@angular/core';
+import { Component, AfterViewInit} from '@angular/core';
 
 @Component({
   selector: 'app-header-home',

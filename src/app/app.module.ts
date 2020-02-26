@@ -13,7 +13,10 @@ import { ShopComponent } from './public/pages/shop/shop.component';
 import { PortfolioComponent } from './public/pages/portfolio/portfolio.component';
 import { AboutUsComponent } from './public/pages/about-us/about-us.component';
 import { HeaderHomeComponent } from './public/header-home/header-home.component';
-
+import { HeaderShopComponent } from './public/header-shop/header-shop.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpErrorInterceptor } from './interceptors/HttpErrorInterceptor';
 
 @NgModule({
   declarations: [
@@ -27,13 +30,21 @@ import { HeaderHomeComponent } from './public/header-home/header-home.component'
     ShopComponent,
     PortfolioComponent,
     AboutUsComponent,
-    HeaderHomeComponent
+    HeaderHomeComponent,
+    HeaderShopComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpErrorInterceptor,
+      multi: true,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

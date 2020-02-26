@@ -11,7 +11,7 @@ header
                     a(href="/portfolio") Portfolio
                 li 
                     a(href="/aboutUs") About Us
-    img(class= "{{ imageClass }}" src = "../../assets/img/bg5.jpg")
+    img(class= "{{ imageClass }}" src = "../../assets/img/home/bg5.jpg")
     .popMessage
         .firstMessage( class = "{{ popClass }}")
             div.bg
@@ -19,14 +19,14 @@ header
                 
         .secondMessage(class = "{{ popClass2 }}")
             div.bg
-            p Compami name
+            p Company name
     .startButton
         div( class = "{{ buttonClass }}") View our works
     //- .social
     <div class="social">
         .share(class = "{{ shareClass }}")
             //- img(src="../../assets/img/logo.jpg" width="50px" height="50px")
-            <a href="#"><i class="fa fa-share fa-2x" aria-hidden="true"></i></a>
+            <a><i class="fa fa-share fa-2x" aria-hidden="true"></i></a>
         <ul (mouseover) = "hideShare()" (mouseleave) = "showShare()">
             <li class="soundcloud"><a href="https://soundcloud.com/amet_rc" target="_blank"><i class="fa fa-soundcloud fa-2x" aria-hidden="true"></i></a></li>
             <li class="instagram"><a href="https://www.instagram.com/amet_rc" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a></li>

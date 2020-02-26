@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Share&display=swap');
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 40px;
+    background: #111110;
+    padding: 0 10%;
+    span{
+        line-height: 33px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        outline: 0;
+        letter-spacing: .2px;
+        color: #fff;
+        text-decoration: none;
+    }
+}
