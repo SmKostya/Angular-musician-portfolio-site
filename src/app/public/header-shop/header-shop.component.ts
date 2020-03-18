@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderShopComponent implements OnInit {
   public list__category = "hideCategory";
-  public overlayBackdrop = "hideBackdrop";
+  public overlayBackdrop = "hideBackdropShop";
   
   public selected__category = "All";
   constructor() { }
@@ -17,10 +17,10 @@ export class HeaderShopComponent implements OnInit {
   toogleList__category() {
     if (this.list__category == "hideCategory"){
       this.list__category = "showCategory";
-      this.overlayBackdrop = "showBackdrop";
+      this.overlayBackdrop = "showBackdropShop";
     }else{
       this.list__category = "hideCategory";
-      this.overlayBackdrop = "hideBackdrop";
+      this.overlayBackdrop = "hideBackdropShop";
     }
   } 
   select__category(event){

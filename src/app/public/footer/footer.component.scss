@@ -20,4 +20,10 @@ footer{
         color: #fff;
         text-decoration: none;
     }
+    a{
+        text-decoration: none;
+        &, &:active{
+            color:white;
+        }
+    }
 }

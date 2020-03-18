@@ -1,2 +1,89 @@
 app-header
-<p>about-us works!</p>
+main
+    h2 About Us
+    .textBlock
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic laudantium dolore nisi numquam pariatur id ad distinctio doloremque nobis, maxime ullam, facere ut adipisci minus molestiae quis. Magni, totam rerum!
+
+    .contactForm
+        h3 Contact Me
+        form.contact_form(action="../SendMessageTelegram.php" method="post" onsubmit="return checkLastSend();")
+            div
+                .message
+                    .name
+                        label(for="firstname__field") Ваше имя
+                        input#firstname__field(type="text" name="name" required)
+                    .contact
+                        label(for="contact") Ваш телефон, почта или другая контактная информация
+                        input#contact(type="tel" name="contact") 
+                    
+                    .messageField
+                        label(for="textarea") Сообщение: 
+                        textarea#textarea(height="100%" name="text")
+                    
+
+            input(type="submit" class="sendForm button" value = "Отправить")
+        .social
+            <a href="https://soundcloud.com/amet_rc" target="_blank"><i class="fa fa-soundcloud fa-2x" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/amet_rc" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
+            <a href="https://www.facebook.com/amet.ibraimov.1" target="_blank"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a>
+            <a href="https://vk.com/amet_ib" target="_blank"><i class="fa fa-vk fa-2x" aria-hidden="true"></i></a>
+            <a href="https://www.youtube.com/channel/UC3rUna-dZuPyakff7cNRCSQ?view_as=subscriber" target="_blank"><i class="fa fa-youtube fa-2x" aria-hidden="true"></i></a>
+            <a href="https://t.me/Amet_RC" target="_blank"><i class="fa fa-telegram fa-2x" aria-hidden="true"></i></a>
+        
+        .SendFormMessage.success(style="display: none;") Форма успешно отправлена!
+        .SendFormMessage.error(style="display: none;") Произошла ошибка при отправке формы. Попробуйте ещё раз, либо свяжитесь со мной с помощью мессенджера.
+        
+        script(src="https://npmcdn.com/js-alert/dist/jsalert.min.js")
+        script. 
+            function checkLastSend(){
+                
+                let now = new Date();
+                let lastSendForm = localStorage['lastSendForm'];
+
+                now = {
+                    day: now.getDate(),
+                    month: now.getMonth() + 1,
+                    hour: now.getHours(),
+                    min: now.getMinutes()
+                };
+                
+                lastDate = {
+                    day: +lastSendForm.slice(0,2),
+                    month: +lastSendForm.slice(3,5),
+                    hour: +lastSendForm.slice(7,9),
+                    min: +lastSendForm.slice(10,13)
+                };
+
+                if ((lastDate.hour - now.hour) == 0 && (lastDate.day - now.day) == 0 && (lastDate.month - now.month) == 0){
+                    if ((lastDate.min - now.min) < 5){
+                        var alert = new JSAlert("Вы недавно уже отправяли заявку("+lastSendForm.slice(7,13)+")", "Ой..");
+                        alert.addButton("Главная").then(function() {
+                            document.location.href = "http://anton-ph.com/";
+                        });
+                        alert.addButton("Портфолио").then(function() {
+                            document.location.href = "http://anton-ph.com/portfolio";
+                        });
+                        alert.addButton("Остаться").then(function() {
+                        });
+                        alert.show();
+                        return false;
+                    }
+                    else{
+                        function saveFields(){
+                            localStorage['name'] = $("#firstname__field").val();
+                            localStorage['type'] = document.getElementsByTagName("select")[0].selectedIndex;
+                            localStorage['time'] = document.getElementsByClassName("time")[0].getElementsByTagName("input")[0].value;
+                            localStorage['money_per_hour'] = $("#money_per_hour").val();
+                            localStorage['fullMoney'] = $("#fullMoney").val();
+                            localStorage['phone'] = $("#phone").val();
+                            localStorage['message'] = document.getElementsByTagName("textarea")[0].value;
+                        }
+                        saveFields();
+                        return true;
+                    }
+                }
+                else{
+                    saveFields();
+                    return true;
+                }
+            }

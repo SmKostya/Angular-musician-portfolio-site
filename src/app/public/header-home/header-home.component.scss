@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Stardos+Stencil&display=swap");
 @import url('https://fonts.googleapis.com/css?family=Amatic+SC&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Arimo&display=swap');
+
 $mainColor: #ffffff;
 
 header {
@@ -31,7 +34,7 @@ header {
           color: #fff;
           display: inline-block;
           a {
-            font-family: Stardos Stencil;
+            font-family: "Poppins";
             font-style: normal;
             font-weight: normal;
             font-size: 27px;
@@ -192,6 +195,9 @@ header {
       position: absolute;
       bottom: 10%;
       left: calc(50% - 160.5px);
+      a{
+        text-decoration: none;
+      }
     div {
       opacity: 0;
       background: none;

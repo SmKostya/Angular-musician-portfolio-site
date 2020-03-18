@@ -1,2 +1,68 @@
-app-header
-<p>portfolio works!</p>
+app-header-shop
+
+mixin work(imageSrc, name, description, audio, hashNumber)
+    .oneWork((click)="openWork($event)" style="background-image: url(" + imageSrc + ")")
+        .name
+            span=name
+        .shareButton((mouseenter)="showShareButtons__AllWorks($event)").showShareButton
+            <a><i class="fa fa-share fa-1x" aria-hidden="true"></i></a>
+        .share((click)="share_viewMore()", (mouseleave)="hideShareButtons__AllWorks($event)").showShareButton
+            .twitter
+                <a href="https://twitter.com/home?status=http://25.95.183.83:4200/portfolio##{hashNumber}" target="_blank"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a>
+            .facebook
+                <a href="https://www.facebook.com/sharer/sharer.php?u=http://25.95.183.83:4200/portfolio##{hashNumber}" target="_blank"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a>
+            .vk
+                <a href="http://vk.com/share.php?url=http://25.95.183.83:4200/portfolio##{hashNumber}" target="_blank"><i class="fa fa-vk fa-2x" aria-hidden="true"></i></a>
+            .telegram
+                <a href="https://telegram.me/share/url?url=http://25.95.183.83:4200/portfolio##{hashNumber}" target="_blank"><i class="fa fa-telegram fa-2x" aria-hidden="true"></i></a>
+        .data_oneWork(style="display: none")
+            p.description=description
+            audio(src=audio)
+
+
+
+
+
+.main
+    h2 My works
+    .allWorks
+        .container
+            .row
+                .col-sm
+                    +work('../../../../assets/img/home/events/1.jpg', "News", "Ул. Суворова 24", "../../../../assets/audio/1.mp3", 0) 
+                .col-sm
+                    +work('../../../../assets/img/home/events/2.jpg', "Release", "AMIGO", "../../../../assets/audio/2.mp3", 1) 
+                .col-sm
+                    +work('../../../../assets/img/home/events/3.jpg', "News", "KAYOT", "../../../../assets/audio/1.mp3", 2)
+                .col-sm
+                    +work('../../../../assets/img/home/events/1.jpg', "Release", "Ул. Суворова 24", "../../../../assets/audio/1.mp3", 3) 
+                .col-sm
+                    +work('../../../../assets/img/home/events/2.jpg', "News", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae repellendus iusto rem laudantium nihil, ullam reprehenderit perferendis voluptatibus quasi? Dicta aspernatur unde autem nulla minus quam reprehenderit consequatur dolor. Explicabo. Lorem", "../../../../assets/audio/2.mp3", 4) 
+                .col-sm
+                    +work('../../../../assets/img/home/events/3.jpg', "Release", "KAYOT", "../../../../assets/audio/1.mp3", 5)       
+    .viewMore_oneWork(class = "{{ showViewMore }}")
+        div
+        .name
+            span Release
+        img(src="")
+        audio(src="" controls controlsList="nodownload")
+        .description
+            h4 Description: 
+            p Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio, fuga aliquid voluptates quaerat quis a eligendi cumque quod quasi. Repudiandae nam iusto perspiciatis, accusantium temporibus animi totam quibusdam tempore minus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione iste omnis, consequuntur ab facere voluptates ipsum eaque doloremque vel sint blanditiis provident, atque esse repudiandae? Repellendus laudantium quae perspiciatis autem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero rem natus fugit ex itaque, quae reprehenderit? Ut, maiores, quam illo natus ratione doloremque excepturi eos repudiandae placeat porro vitae facilis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nemo ipsam ad itaque temporibus accusamus cumque totam vero sit consectetur, libero modi in quia laudantium, corrupti ipsa enim, eius consequuntur. description description description description description description description description description description description description
+        //- .shareButton((mouseenter)="showShareButtons__ViewMore()" (mouseleave)="hideShareButtons__ViewMore()" class="{{ shareButton__viewMore }}")
+        .shareButton((mouseenter)="showShareButtons__ViewMore()" class="{{ shareButton__viewMore }}")
+            span Share
+            <a><i class="fa fa-share fa-1x" aria-hidden="true"></i></a>
+            //- <svg viewBox="0 0 18 17" fill="currentColor" width="20" height="20"><path d="M12.221 2.361l4.453 4.722-4.453 4.723v-1.7l-.758-.19a9.37 9.37 0 0 0-2.274-.283c-2.936 0-5.684 1.228-7.673 3.211 2.179-8.31 8.905-8.783 9.758-8.783h.947v-1.7zm-.947.756C9.189 3.21.664 4.627 0 17c1.516-3.778 5.116-6.328 9.19-6.328.663 0 1.326.095 2.084.19v3.305L18 7.083 11.274 0v3.117z"></path></svg>
+        .share((click)="share_viewMore()", (mouseleave)="hideShareButtons__ViewMore()" class="{{ shareButton__viewMore }}")
+            .twitter
+                <a href="https://twitter.com/home?status=http://25.95.183.83:4200/portfolio##{hashNumber}" target="_blank"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a>
+            .facebook
+                <a href="https://www.facebook.com/sharer/sharer.php?u=http://25.95.183.83:4200/portfolio##{hashNumber}" target="_blank"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a>
+            .vk
+                <a href="http://vk.com/share.php?url=http://25.95.183.83:4200/portfolio##{hashNumber}" target="_blank"><i class="fa fa-vk fa-2x" aria-hidden="true"></i></a>
+            .telegram
+                <a href="https://telegram.me/share/url?url=http://25.95.183.83:4200/portfolio##{hashNumber}" target="_blank"><i class="fa fa-telegram fa-2x" aria-hidden="true"></i></a>
+
+div((click)="toogle_viewMore()" class = "{{ viewMoreOverlayBackdrop }}")
+    <svg _ngcontent-vro-c4="" fill="#000000" height="24" viewBox="0 0 16 16" width="24"><g _ngcontent-vro-c4="" fill="none" fill-rule="evenodd" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"><path _ngcontent-vro-c4="" d="M4,4 L12,12" stroke="#fff" stroke-width="2"></path><path _ngcontent-vro-c4="" d="M4,4 L12,12" stroke="#fff" stroke-width="2" transform="translate(8.000000, 8.000000) scale(-1, 1) translate(-8.000000, -8.000000) "></path></g></svg>            

@@ -1,5 +1,7 @@
 app-header-shop
+link(rel="stylesheet", href="../../../../assets/css/glyphicon.css")
 main
+    h1 Free Beats
     .sortBy
         span Sort By
         .selectedFilter((click)="toogleList__filter()") 
@@ -10,5 +12,86 @@ main
             li((click)="select__filter($event)") Price ⯅ 
             li((click)="select__filter($event)") Price ⯆ 
             li((click)="select__filter($event)") Oldest
-
+    mixin oneBeat
+        .beatBlock
+            div.mainInfo
+                span.number 1
+                img(src="../../../assets/img/logo.jpg" alt="" srcset="" width="50px" height="50px")
+                div
+                    .name Oraradi single 1
+                    .descriptoins 120bpm
+            .tags 
+                .tag Epic 
+                .tag Raggamuffin
+            div.getBeat
+                    .downloadBeat
+                        span Download
+                        .mobileDownload
+                            <svg fill="#000000" viewBox="0 0 24 24" width="24" height="24"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polyline stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="8 12 12 16 16 12"></polyline><rect fill="#fff" x="11" y="6" width="2" height="9" rx="1"></rect></g></svg>
+                    .minPrice((click) = "showLicenses($event)") 
+                        span 50000
+    .priceBlock([style.display] = "showPrices ? 'block' : 'none'")    
+        .price 
+            .head
+                span Выбор лицензии
+                .exit((click) = "hideLicenses()")
+                    <svg fill="#000000" viewBox="0 0 16 16" width="24" height="24"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"><path d="M4,4 L12,12" stroke="#fff" stroke-width="2"></path><path d="M4,4 L12,12" stroke="#fff" stroke-width="2" transform="translate(8.000000, 8.000000) scale(-1, 1) translate(-8.000000, -8.000000) "></path></g></svg>
+            .allLicenses
+                .license
+                    div
+                        .type__price MP3 Аренда 
+                        .value__price 500
+                    a.detail Details
+                    
+                .license
+                    div
+                        .type__price WAV Аренда
+                        .value__price 1000
+                    a.detail Details
+                .license
+                    div
+                        .type__price Мультитрек Аренда 
+                        .value__price 1500
+                    a.detail Details
+                .license
+                    div
+                        .type__price Безлимитная аренда
+                        .value__price 2000
+                    a.detail Details
+                .license
+                    div
+                        .type__price Эксклюзив
+                        .value__price 3000
+                    a.detail Details
+    .beatsList
+        +oneBeat
+        +oneBeat
+        +oneBeat
+        +oneBeat
+        +oneBeat
+        +oneBeat
+        +oneBeat
+        +oneBeat
+        +oneBeat
+        +oneBeat
+        +oneBeat
+        +oneBeat
+        +oneBeat
+        +oneBeat
+        +oneBeat
+        +oneBeat
+        +oneBeat
+        +oneBeat
+        +oneBeat
+        +oneBeat
+        +oneBeat
+        +oneBeat
+        +oneBeat
+        +oneBeat
+        +oneBeat
+        +oneBeat
+        +oneBeat
+        +oneBeat
+        +oneBeat
+        +oneBeat
 div((click)="toogleList__filter()" class = "{{ filterOverlayBackdrop }}")

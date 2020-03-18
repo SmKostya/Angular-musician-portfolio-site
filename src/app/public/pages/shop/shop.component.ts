@@ -47,7 +47,7 @@ export class ShopComponent implements OnInit {
       this.filterOverlayBackdrop = "showBackdrop";
     }else{
       this.filter__category = "hideCategory";
-      this.filterOverlayBackdrop = "hideBackdrop";
+      this.filterOverlayBackdrop = "hideBackdrop"; 
     }
   }
   select__filter(event){
@@ -57,14 +57,21 @@ export class ShopComponent implements OnInit {
     target.classList = "checked";
     this.toogleList__filter();
   }
-
+  public showPrices = false;
+  hideLicenses(){
+    this.showPrices = false;
+  }
+  showLicenses(event){
+    
+    this.showPrices = true;
+  }
   ngOnInit(): void {
     // this.getBits(Utils.getAllBeats, [""]);
     // this.showBits();
     this.getBeats(Utils.getBeatsById, ["P0002",]);
     this.showBeats();
 
-
+  
 
   }
 

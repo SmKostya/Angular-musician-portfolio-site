@@ -1,104 +1,369 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
-
-main{
-    border-top: 0.5px rgb(146, 146, 146) solid;
-    background-color: #080808;
+@import url("https://fonts.googleapis.com/css?family=Gorditas&display=swap");
+@font-face {
+  font-family: "Gordita-Bold";
+  src: url("../../../../assets/fonts/Gordita-Bold.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
 }
-.sortBy{
-    font-family: "Poppins";
-    padding: 30px 10%;
-    display: flex;
-    justify-content: flex-end;
+
+@font-face {
+  font-family: "Gordita-Medium";
+  src: url("../../../../assets/fonts/Gordita-Medium.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+main {
+  border-top: 0.5px rgb(146, 146, 146) solid;
+  background-color: #080808;
+  font-family: "Poppins", "Gorditas";
+  padding-bottom: 15px;
+}
+h1{
+  display: flex;
+  margin: 30px auto 0 calc(15%) !important;
+  width: max-content;
+  
+  color: white;
+  align-self: end;
+}
+.sortBy {
+  font-family: "Poppins";
+  padding: 10px 15% 40px 10%;
+  display: flex;
+  justify-content: flex-end;
+  margin: auto;
+  > span {
+    min-width: 100px;
+    width: auto;
+    color: #707070;
+    text-align: right;
     margin: auto;
-    >span{
-        min-width: 100px;
-        width: auto;
-        color: #707070;
-        text-align: right;
-        margin: auto;
-        margin-right: 12px;
+    margin-right: 12px;
+  }
+  select {
+    background-color: #262626;
+    padding: 8px 16px;
+  }
+  .selectedFilter {
+    z-index: 101;
+    border-radius: 2px;
+    transition: 0.5s;
+    color: #fff;
+    overflow: visible;
+    text-align: right;
+    background-color: #262626;
+    min-width: 180px;
+    width: max-content;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    span {
+      padding: 8px 16px;
+      font-size: 14px;
+      cursor: pointer;
+      &.arrow {
+        display: inline-block;
+        transform: scale(1.6, 0.8);
+      }
     }
-    select{
-        background-color: #262626;
-        padding: 8px 16px;
+  }
+  ul {
+    z-index: 100;
+    color: #707070;
+    position: absolute;
+    border-radius: 2px;
+    margin-top: 38px;
+    display: flex;
+    flex-direction: column;
+    background-color: #1b1b1b;
+    width: max-content;
+    transition: 0.5s;
+    &.showCategory {
+      opacity: 1;
+      min-width: 120px;
+      height: auto;
     }
-        .selectedFilter {
-          z-index: 101;
-          border-radius: 2px;
-          transition: 0.5s;
+    &.hideCategory {
+      // z-index: -1000;
+      opacity: 0;
+      min-width: 0;
+      min-height: 0;
+      max-width: 0;
+      max-height: 0;
+      overflow: hidden;
+      li {
+        width: 0 !important;
+        opacity: 0;
+      }
+    }
+    li {
+      list-style: none;
+      text-align: left;
+      min-width: 180px;
+      margin-left: 0;
+      font-size: 14px;
+      cursor: pointer;
+      font-family: "Poppins";
+      letter-spacing: 0.2px;
+      padding: 8px 0 8px 12px;
+      position: relative;
+      &:hover {
+        background-color: #1d1d1d;
+      }
+      &.checked {
+        display: none;
+      }
+    }
+  }
+}
+.showBackdrop {
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99;
+  // background-color: rgba(0, 0, 0, 0.253);
+}
+.hideBackdrop,
+.showBackdrop {
+  transition: 0.3s;
+}
+
+.beatBlock {
+  color: #707070;
+  font-family: "Poppins";
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 1% 1%;
+  margin: 0 15%;
+  cursor: pointer;
+  transition: 0.2s;
+  &:nth-child(2n+1){
+    background-color: #131212;
+  }
+  border-bottom: rgb(175, 175, 175) solid 0.5px;
+  &:last-child{
+    border: none;
+  }
+  .mainInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    span.number {
+      text-align: center;
+      width: 50px;
+    }
+    img {
+      // margin: 0 50px 0 30px;
+    }
+    > div {
+      margin-left: 15px;
+      .name {
+        color: #fff;
+      }
+    }
+  }
+
+  .tags {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .tag {
+      transition: 0.15s;
+      cursor: pointer;
+      font-size: 12px;
+      max-width: 135px;
+      margin: auto 15px;
+      border: 1px solid #707070;
+      padding: 6px 16px;
+      border-radius: 15px;
+      &::before {
+        content: "#";
+      }
+
+      &:hover {
+        background-color: #52525265;
+        color: #b8b8b8;
+        border: 1px solid #b8b8b8;
+      }
+    }
+  }
+
+  .getBeat {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .downloadBeat {
+      margin-right: 25px;
+      // background-color: #262626;
+
+      > span {
+        background-color: #1f1f1f;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        display: block;
+        padding: 7.5px 20px;
+        color: #999999;
+        border: 1px solid #444444;
+        border-radius: 4px !important;
+        transition: 0.2s;
+
+        &:hover {
+          background-color: #2e2e2e;
           color: #fff;
-          overflow: visible;
-          text-align: right;
-          background-color: #262626;
-          min-width: 180px;
-          width: max-content;
+        }
+      }
+      .mobileDownload {
+        display: none;
+        background-color: #262626;
+        // filter: invert(1);
+        padding: 3px;
+      }
+      // border-radius: 50%;
+      // border: 1px solid #70707063;
+    }
+
+    .minPrice {
+      font-family: "Poppins", Gordita-Medium;
+      // border: 1px solid #70707063;
+      border-radius: 5px;
+      padding: 6px 20px;
+      background-color: #d22035;
+      color: white;
+      font-weight: 700;
+      transition: 0.2s;
+      span {
+        &::before {
+          font-weight: normal;
+          content: "от ";
+        }
+        &::after {
+          font-weight: normal;
+          content: " ₴";
+        }
+      }
+      &:hover {
+        background-color: #f0031f;
+      }
+    }
+  }
+
+  &:hover {
+    background-color: #222222;
+  }
+}
+.priceBlock {
+  font-family: "Poppins", Gordita-Medium;
+  letter-spacing: 0.1px;
+  // display: none;
+  background-color: #0000005b;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 110;
+  .price {
+    background-color: #262626;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    min-width: 400px;
+    width: 250px;
+    height: 410px;
+    .head {
+      font-size: 20px;
+      display: flex;
+      background-color: #1b1b1b;
+      height: 60px;
+      padding: 0 8px;
+      border-bottom: 0.5px solid rgb(54, 54, 54);
+      padding-bottom: 8px;
+
+      span {
+        color: #fff;
+        font-weight: 600;
+        height: 30px;
+        display: block;
+        margin: auto;
+        margin-left: 0;
+        margin-bottom: 0;
+      }
+
+      .exit{
+        height: min-content;
+        width: min-content;
+        cursor: pointer;
+        transition: 0.2s;
+        &:hover{
+          filter: invert(0.4);
+        }
+      }
+    }
+    .allLicenses {
+      padding: 6px 12px 12px 12px;
+      .license {
+        > div {
           display: flex;
+          flex-direction: row;
           justify-content: space-between;
-          cursor: pointer;
-          span {
-            padding: 8px 16px;
+          margin-top: 12px;
+          align-items: center;
+          .value__price{
+            padding: 2px 12px;
+            color: white;
+            background-color: #5cb85c;
             font-size: 14px;
+            padding-top: 4px;
             cursor: pointer;
-            &.arrow{
-                display: inline-block;
-                transform:scale(1.6,0.8);
+            transition: 0.2s;
+            &::before {
+              display: inline-block;
+              padding-right: 4px;
+              margin-top: 2px;
+              font-weight: normal;
+              content: url('https://api.iconify.design/typcn-shopping-cart.svg?height=16');
+              vertical-align: -0.125em;
+              filter: invert(1);
+
+              // content: "\e116";
             }
+            &::after {
+              font-size: 12px;
+              font-weight: normal;
+              content: " ₴";
+            }
+            &:hover{
+              background-color: #438643;
+            }
+
+
+          }
+          .type__price{
+            color: #bdbdbd;
           }
         }
-        ul {
-          z-index: 100;
-          color: #707070;
-          position: absolute;
-          border-radius: 2px;
-          margin-top: 38px;
-          display: flex;
-          flex-direction: column;
-          background-color: #1b1b1b;
-          width: max-content;
-          transition: 0.5s;
-          &.showCategory {
-            opacity: 1;
-            min-width: 120px;
-            height: auto;
-          }
-          &.hideCategory {
-            opacity: 0;
-            min-width: 0;
-            height: 0;
-            li {
-              width: 0 !important;
-              opacity: 0;
-            }
-          }
-          li {
-            list-style: none;
-            text-align: left;
-            min-width: 180px;
-            margin-left: 0;
-            font-size: 14px;
-            cursor: pointer;
-            font-family: "Poppins";
-            letter-spacing: 0.2px;
-            padding: 8px 0 8px 12px;
-            position: relative;
-            &:hover{
-                background-color: #1d1d1d;
-            }
-            &.checked{
-                display: none;
-            }
+        .detail{
+          cursor: pointer;
+          display: block;
+          // margin-top: -8px;
+          color: #5959ff;
+          width: min-content;
+          &:hover{
+            text-decoration: underline;
           }
         }
       }
-      .showBackdrop{
-        top: 0;
-        left: 0;
-        position: fixed;
-        width: 100vw;
-        height: 100vh;
-        z-index: 99;
-        // background-color: rgba(0, 0, 0, 0.253);
     }
-    .hideBackdrop, .showBackdrop{
-        transition: 0.3s;
-    }
+  }
+}

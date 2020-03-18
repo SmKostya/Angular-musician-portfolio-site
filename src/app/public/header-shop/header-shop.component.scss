@@ -102,7 +102,10 @@ header {
           &.hideCategory {
             opacity: 0;
             min-width: 0;
-            height: 0;
+            min-height: 0;
+            max-width: 0;
+            max-height: 0;
+            overflow: hidden;
             li {
               width: 0 !important;
               opacity: 0;
@@ -158,13 +161,13 @@ header {
     }
   }
 }
-.showBackdrop{
+.showBackdropShop{
     position: fixed;
     width: 100vw;
     height: 100vh;
     z-index: 99;
     background-color: rgba(0, 0, 0, 0.253);
 }
-.hideBackdrop, .showBackdrop{
+.hideBackdropShop, .showBackdropShop{
     transition: 0.3s;
 }
