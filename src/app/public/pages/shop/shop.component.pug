@@ -16,20 +16,56 @@ main
         .beatBlock
             div.mainInfo
                 span.number 1
-                img(src="../../../assets/img/logo.jpg" alt="" srcset="" width="50px" height="50px")
+                img(src="../../../assets/audio/img/1.jpg" alt="" srcset="" width="50px" height="50px")
                 div
-                    .name Oraradi single 1
+                    .name Single 1
                     .descriptoins 120bpm
             .tags 
-                .tag Epic 
-                .tag Raggamuffin
+                .tag Electro
+                .tag Hip-hop
             div.getBeat
                     .downloadBeat
                         span Download
                         .mobileDownload
                             <svg fill="#000000" viewBox="0 0 24 24" width="24" height="24"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polyline stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="8 12 12 16 16 12"></polyline><rect fill="#fff" x="11" y="6" width="2" height="9" rx="1"></rect></g></svg>
                     .minPrice((click) = "showLicenses($event)") 
-                        span 50000
+                        span 700
+    mixin twoBeat
+        .beatBlock
+            div.mainInfo
+                span.number 1
+                img(src="../../../assets/audio/img/2.jpg" alt="" srcset="" width="50px" height="50px")
+                div
+                    .name Single 2
+                    .descriptoins 100bpm
+            .tags 
+                .tag Trance 
+                .tag Techno
+            div.getBeat
+                    .downloadBeat
+                        span Download
+                        .mobileDownload
+                            <svg fill="#000000" viewBox="0 0 24 24" width="24" height="24"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polyline stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="8 12 12 16 16 12"></polyline><rect fill="#fff" x="11" y="6" width="2" height="9" rx="1"></rect></g></svg>
+                    .minPrice((click) = "showLicenses($event)") 
+                        span 5000
+    mixin threeBeat
+        .beatBlock
+            div.mainInfo
+                span.number 1
+                img(src="../../../assets/audio/img/3.jpg" alt="" srcset="" width="50px" height="50px")
+                div
+                    .name Single 3
+                    .descriptoins 90bpm
+            .tags 
+                .tag Reggae 
+                .tag Dance
+            div.getBeat
+                    .downloadBeat
+                        span Download
+                        .mobileDownload
+                            <svg fill="#000000" viewBox="0 0 24 24" width="24" height="24"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><polyline stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="8 12 12 16 16 12"></polyline><rect fill="#fff" x="11" y="6" width="2" height="9" rx="1"></rect></g></svg>
+                    .minPrice((click) = "showLicenses($event)") 
+                        span 2400
     .priceBlock([style.display] = "showPrices ? 'block' : 'none'")    
         .price 
             .head
@@ -65,27 +101,32 @@ main
                     a.detail Details
     .beatsList
         +oneBeat
+        +twoBeat
+        +threeBeat
         +oneBeat
+        +twoBeat
+        +threeBeat
         +oneBeat
+        +twoBeat
+        +threeBeat
         +oneBeat
+        +twoBeat
+        +threeBeat
         +oneBeat
+        +twoBeat
+        +threeBeat
         +oneBeat
+        +twoBeat
+        +threeBeat
         +oneBeat
+        +twoBeat
+        +threeBeat
         +oneBeat
+        +twoBeat
+        +threeBeat
         +oneBeat
-        +oneBeat
-        +oneBeat
-        +oneBeat
-        +oneBeat
-        +oneBeat
-        +oneBeat
-        +oneBeat
-        +oneBeat
-        +oneBeat
-        +oneBeat
-        +oneBeat
-        +oneBeat
-        +oneBeat
+        +twoBeat
+        +threeBeat
         +oneBeat
         +oneBeat
         +oneBeat
